@@ -1,0 +1,21 @@
+name: Sync to Hugging Face Spaces
+on: 
+    push: 
+        branches: [main]
+
+    workflow_dispatch:
+
+jobs:
+    sync-to-hub:
+        runs-on: ubuntu-latest
+
+        steps: 
+            - name: Download latest code from GitHub
+              uses: actions/checkout@v3
+            
+            - name: Push the Code to Hugging Face Spaces
+              env:
+                HF_TOKEN: ${{ secrets.HF_TOKEN }}
+              run:  git push --force https://Suraj-Yadav:$HF_TOKEN@https://huggingface.co/spaces/Suraj-Yadav/Basic-Chatbot-LangGraph main
+
+              
