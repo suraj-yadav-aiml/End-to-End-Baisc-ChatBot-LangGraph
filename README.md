@@ -8,5 +8,5 @@ sdk_version: 1.44.0
 app_file: app.py
 pinned: false
 license: mit
-short_description: A simple chatbot created with langgraph using modular codding
+short_description: A simple chatbot created with langgraph
 ---
