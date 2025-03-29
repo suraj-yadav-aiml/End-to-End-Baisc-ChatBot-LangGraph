@@ -1,4 +1,4 @@
-name: Sync to Hugging Face Spaces
+name: Sync Local to Hugging Face Spaces
 on: 
     push: 
         branches: [main]
@@ -12,6 +12,9 @@ jobs:
         steps: 
             - name: Download latest code from GitHub
               uses: actions/checkout@v3
+              with:
+                fetch-depth: 0
+                lfs: false
             
             - name: Push the Code to Hugging Face Spaces
               env:
