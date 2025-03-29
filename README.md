@@ -1,5 +1,3 @@
-# End-to-End-Baisc-ChatBot-LangGraph
-
 ---
 title: Basic Chatbot with LangGraph
 emoji: 🤖
