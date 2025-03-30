@@ -95,7 +95,7 @@ class DisplayResultStreamlit:
     def display_result_on_ui(self) -> None:
         usecase_handlers = {
             "Basic Chatbot": self._handle_basic_chatbot,
-            "Chatbot with Tool": self._handle_chatbot_with_tool,
+            "Chatbot with Tools": self._handle_chatbot_with_tool,
         }
 
         handler = usecase_handlers.get(self.usecase)

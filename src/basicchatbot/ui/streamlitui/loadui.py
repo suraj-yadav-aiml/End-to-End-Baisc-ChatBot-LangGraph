@@ -88,7 +88,7 @@ class StreamlitUILoader:
             usecase_options = self.config.get_usecase_options()
             self.user_input['selected_usecase'] = st.selectbox(label="Select Usecase",options=usecase_options)
 
-            if self.user_input['selected_usecase'] == "Chatbot with Tool":
+            if self.user_input['selected_usecase'] == "Chatbot with Tools":
                 self._setup_tavily_configuration()
 
         return self.user_input

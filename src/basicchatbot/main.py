@@ -34,6 +34,9 @@ def load_basic_chatbot():
             try:
                 graph_builder = GraphBuilder(model=llm)
                 graph = graph_builder.setup_graph(usecase)
+                if graph is None:
+                    st.error("Error: Graph setup failed.")
+                    return
                 
                 DisplayResultStreamlit(
                     usecase=usecase,
