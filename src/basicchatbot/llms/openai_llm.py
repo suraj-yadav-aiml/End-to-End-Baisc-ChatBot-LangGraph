@@ -1,12 +1,13 @@
 import os
 import streamlit as st
 from typing import Dict, Optional
+from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_openai import ChatOpenAI
 from src.basicchatbot.llms.base_llm import BaseLLMProvider
 
 class OpenAILLM(BaseLLMProvider):
 
-    def get_llm_model(self) -> Optional[ChatOpenAI]:
+    def get_llm_model(self) -> Optional[BaseChatModel]:
         try:
             # Clear previous error messages
             self.error_messages = []

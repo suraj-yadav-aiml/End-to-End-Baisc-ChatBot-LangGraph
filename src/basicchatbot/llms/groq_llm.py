@@ -2,12 +2,13 @@ import os
 import streamlit as st
 from typing import Dict, Optional
 from langchain_groq import ChatGroq
+from langchain_core.language_models.chat_models import BaseChatModel
 from src.basicchatbot.llms.base_llm import BaseLLMProvider
 
 
 class GroqLLM(BaseLLMProvider):
 
-    def get_llm_model(self) -> Optional[ChatGroq]:
+    def get_llm_model(self) -> Optional[BaseChatModel]:
         try:
             # Clear previous error messages
             self.error_messages = [] 

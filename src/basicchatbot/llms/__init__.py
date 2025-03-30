@@ -1,12 +1,12 @@
 import streamlit as st
 from typing import Dict, Optional, Type, Union
-
+from langchain_core.language_models.chat_models import BaseChatModel
 from src.basicchatbot.llms.base_llm import BaseLLMProvider
 from src.basicchatbot.llms.groq_llm import GroqLLM
 from src.basicchatbot.llms.openai_llm import OpenAILLM
 
 
-def get_llm(llm_name: str, user_input: Dict[str, str]) -> Optional[BaseLLMProvider]:
+def get_llm(llm_name: str, user_input: Dict[str, str]) -> Optional[BaseChatModel]:
     """
     Function to get the appropriate LLM model instance.
     
