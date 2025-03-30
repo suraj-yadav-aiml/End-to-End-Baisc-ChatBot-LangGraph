@@ -83,9 +83,11 @@ class DisplayResultStreamlit:
                     
                     st.session_state.message_history.append({"role": "assistant", "message": tool_message})
                     with st.chat_message("assistant"):
-                        st.markdown("🔧 **Tool Call Start**")
-                        st.markdown(message.content)
-                        st.markdown("🔧 **Tool Call End**")
+                        # st.markdown("🔧 **Tool Call Start**")
+                        # st.markdown(message.content)
+                        with st.expander(label="Tool Call",expanded=False):
+                            st.markdown(tool_message)
+                        # st.markdown("🔧 **Tool Call End**")
 
         except Exception as e:
             st.error(f"Error processing response: {str(e)}")
